@@ -1,0 +1,209 @@
+== Question 1 == 
+a) What word is on line 2000 
+
+Answer: 
+2000G Algonquian
+
+
+b) the first word in the dictionary file ending with 's
+
+Answer: Any terminating s: 
+/s$ A's
+Excluding plurals/possessives:
+/[a-z]s$
+Aarhus
+
+
+c) the last word in the dictionary that contains the substring ooz ?
+
+Answer:
+G ?ooz
+zoozoos
+
+
+d) What are the first the last and the longest?
+
+Pipeline: grep a.*e.*i.*o.*u mywords
+Answer:
+abstemious valerianaceous supercalifragilisticexpialidocious
+
+e) How many are there?
+53
+
+
+f) Modified regex (optional)?
+
+Pipeline: egrep -i  ^[^aeiou]*a[^aeiou]*e[^aeiou]*i[^aeiou]*o[^aeiou]*u[^aeiou]*$ mywords
+(Zero or more consonants followed by an a, followed by zero or more consonants, etc etc)
+Answer:
+abstemious
+facetiously
+abstemiously
+
+
+== Question 2 == 
+a) How many total words does the file contain?  
+
+Command: wc mywords
+Answer: 390582
+
+b) How many total words, excluding those ending in "'s", are there in the dictionary?
+
+Pipeline: egrep [^s]$ mywords|wc
+Answer: 199227
+
+c) How could you use cat -n and grep to find out which word is on line 100000? 
+
+Pipeline: cat -n mywords | grep 100000
+Answer: adviser
+
+d) How could you use cat -n and grep to print the 700th line, and no other lines?
+
+Pipeline: cat -n mywords | egrep -i ' 700'[^0-9]
+Answer: Adirondack
+
+
+e) How do you use head and tail to find out what word is on line 200000 
+
+Pipeline: head -n 200000 mywords | tail -n 1
+Answer: geodynamics's
+
+== Question 3 == 
+a) which words contain the characters "lmn" consecutively?
+
+Pipeline: grep lmn mywords
+Answer:
+Selmner
+Selmner's
+almner
+almners
+calmness
+calmness's
+calmnesses
+
+
+b) how many words contain "zz", but do not end in apostrophe-s ('s)?
+
+Pipeline: grep zz[^\'s]$ mywords | wc
+Answer: 69
+
+c) how many words contain four consecutive vowels?
+
+Pipeline:
+Answer:
+
+d) how many words have a 9-letter dictionary word embedded inside them.
+
+Pipeline:
+Answer:
+
+
+== Question 4 == 
+
+Pipeline:
+Answer:
+
+a) Write a grep command that will print all the lines in the file where the electorate begins with W.
+
+Pipeline:
+Answer:
+
+b) Write a grep command that will list all the lines in the file where the MP's first name is Andrew. 
+
+Pipeline:
+Answer:
+
+c) Write a grep command that will print all the lines in the file with three consecutive vowels.
+
+Pipeline:
+Answer:
+
+d) Write a grep command that will print all the lines in the file where the MP's surname (last name) ends in the letter 'y'.
+
+Pipeline:
+Answer:
+
+e) Write a grep command that will print all the lines in the file where the electorate ends in the letter 'y'.
+
+Pipeline:
+Answer:
+
+f) Write a grep command to print all the lines in the file where there is a word in the MP's name or the electorate name ending in ng.
+
+Pipeline:
+Answer:
+
+g) Write a grep command that will print all the lines in the file where the MP's surname (last name) both begins and ends with a vowel. 
+
+Pipeline:
+Answer:
+
+h) Write a grep command that will print all the lines in the file where the electorate name contains multiple words (separated by spaces or hyphens). 
+
+Pipeline:
+Answer:
+
+== Question 5 == 
+
+Write a shell pipline which prints the 2nd most common MP first name. 
+
+Pipeline:
+Answer:
+
+== Question 6 ==
+
+a) How many total classes are there?
+
+Pipeline:
+Answer:
+
+b) How many different courses have classes?
+
+Pipeline:
+Answer:
+
+
+c) Write a pipeline which will print the course with the most classes?
+
+Pipeline:
+Answer:
+
+d) Give a command line that prints the most frequently-used tut room? 
+
+Pipeline:
+Answer:
+
+e) Give a command line that prints the most popular time-of-day for tutes? 
+
+Pipeline:
+Answer:
+
+f) Which COMP courses run the most simultaneous classes of the same type? 
+
+Pipeline:
+Answer:
+
+g) Write a pipeline that prints list of the course names (only) of COMP courses that run simultaneous classes of the same type?
+
+Pipeline:
+Answer:
+
+== Question 7 (Challenge) ==
+
+a) Match any line containing at least one A and at least one B.
+
+Regexp:
+
+b) Match any line any line containing only the characters A and B such that all pairs of adjacent As occur before any pairs of adjacent Bs
+
+Regexp:
+
+c) Match any line containing  only the characters A and B such that all number of A's is divisible by 4.
+
+Regexp:
+
+d) Match any line containing n As followed by n Bs and no other characters..
+
+Regexp/script:
+
+
