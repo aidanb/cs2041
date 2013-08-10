@@ -190,63 +190,89 @@ Answer: The Hon Anthony Albanese, Member for Grayndler
 
 h) Write a grep command that will print all the lines in the file where the electorate name contains multiple words (separated by spaces or hyphens). 
 
-Pipeline:
+Pipeline: egrep -i 'Member for [A-Z]+[ |-][a-z]+ *$' parliament.txt 
 Answer:
+The Hon Mark Butler, Member for Port Adelaide  
+Mr Michael Danby, Member for Melbourne Ports
+The Hon Peter Garrett, Member for Kingsford Smith
+The Hon Joe Hockey, Member for North Sydney  
+The Hon Dr Mike Kelly, Member for Eden-Monaro
+Ms Laura Smyth, Member for La Trobe
+The Hon Warren Truss, Member for Wide Bay
+Mr Tony Windsor, Member for New England 
 
 == Question 5 == 
 
 Write a shell pipline which prints the 2nd most common MP first name. 
 
-Pipeline:
-Answer:
+Pipeline: cut -f2 -d',' --complement parliament.txt | rev | cut -d' ' -f2 | rev | sort | uniq -c | sort | tail -2 | head -1
+Answer: 5 Andrew
 
 == Question 6 ==
 
 a) How many total classes are there?
 
-Pipeline:
-Answer:
+Pipeline: wc classes.txt 
+Answer: 316
 
 b) How many different courses have classes?
 
-Pipeline:
-Answer:
+Pipeline: cut classes.txt -f1 | sort | uniq | wc
+Answer: 42
 
 
 c) Write a pipeline which will print the course with the most classes?
 
-Pipeline:
-Answer:
+Pipeline: cut classes.txt -f1 | sort | uniq -c | sort -g | tail -1
+Answer: 35 ENGG1811
 
 d) Give a command line that prints the most frequently-used tut room? 
 
-Pipeline:
-Answer:
+Pipeline: egrep 'TUT|TLB' classes.txt | cut -f5 | sort | uniq -c | sort -g | tail -1
+Answer: 24 Quad G040
 
 e) Give a command line that prints the most popular time-of-day for tutes? 
 
-Pipeline:
-Answer:
+Pipeline: egrep -i 'TUT|TLB' classes.txt | cut -f4 | sort | uniq -c | sort | tail -1
+Answer: 9 Thu 09-10
 
 f) Which COMP courses run the most simultaneous classes of the same type? 
 
-Pipeline:
+Pipeline: cut -f1,3,4 classes.txt | uniq -c | sort
 Answer:
+      5 COMP9414	LAB	Wed 16-18
+      5 COMP9814	LAB	Wed 16-18
 
 g) Write a pipeline that prints list of the course names (only) of COMP courses that run simultaneous classes of the same type?
 
-Pipeline:
+Pipeline: cut -f1,3,4 classes.txt | uniq -c | egrep ^' '*[2-99] | cut -f8 -d' ' | cut -f1 | sort | uniq
 Answer:
+COMP0011
+COMP1911
+COMP1917
+COMP1927
+COMP2911
+COMP3141
+COMP3411
+COMP4511
+COMP9318
+COMP9321
+COMP9332
+COMP9333
+COMP9414
+COMP9814
+ENGG1811
+GENE8000
 
 == Question 7 (Challenge) ==
 
 a) Match any line containing at least one A and at least one B.
 
-Regexp:
+Regexp: egrep 'A.*B|B.*A' file1
 
 b) Match any line any line containing only the characters A and B such that all pairs of adjacent As occur before any pairs of adjacent Bs
 
-Regexp:
+Regexp: egrep 'A.*B|B.*A' file1 | egrep -v 'BB.*AA'
 
 c) Match any line containing  only the characters A and B such that all number of A's is divisible by 4.
 
