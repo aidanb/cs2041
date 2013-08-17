@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# replace all digits less than 5 with <
+# replace all digits greater than 5 with >
+
+tr 1,2,3,4 <
