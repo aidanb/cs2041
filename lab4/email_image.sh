@@ -5,7 +5,7 @@
 
 #set -x
 
-num_images=$#
+
 
 for file in "$@"
 do
@@ -13,4 +13,10 @@ do
         display "$file"
 done
 
-echo Address to e-mail this image to? 
+for file in "$@"
+do
+    read -p "Address to e-mail this image to?" email_address
+
+    echo "$email_address" | egrep '@' && read -p "Message to accompany image?" message && mutt -s "$message" -a $file -- $email_address
+done
+
