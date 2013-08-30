@@ -6,9 +6,7 @@
 use warnings;
 use strict;
 
-#pattern matching aganst non-existent args gives "Use of uninitialized value"
-#	error, so check for args first...
-if (!@ARGV or $ARGV[0] !~ /(\d)/ or $ARGV[1] !~ /(\w)/ or $#ARGV != 1) { 
+if ($ARGV[0] !~ /(\d)/ or $ARGV[1] !~ /(\w)/) { 
 	die "Usage: $0 <n> <string>";
 }
     
