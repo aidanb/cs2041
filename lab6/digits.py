@@ -5,16 +5,17 @@
 
 
 import sys
-import pickle
 import re
-import os
 
-print sys.argv
+text = ""
 
-for argument_file in sys.argv[1:]:
-	print argument_file
-	inputFile = open(argument_file)
-	text = inputFile.read()
+while 1:
+
+	text = raw_input()
+
 	text = re.sub('[0-4]', '<', text)
 	text = re.sub('[6-9]', '>', text)
 	print text
+
+
+
