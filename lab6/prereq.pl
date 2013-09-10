@@ -33,7 +33,7 @@ if ($course =~ /^\w{4}(\d){4}$/i) {
 	}
 
 	while ($lines = <WWW>) {
-		chomp $lines;
+		chomp ($lines);
 
 		if ($lines =~ /^\s*<(script|style)/i) {
 			while ($lines = <WWW>) {
@@ -45,7 +45,7 @@ if ($course =~ /^\w{4}(\d){4}$/i) {
 
 		if ($lines =~ s/.*?Prerequisite\://i) {
 			$lines =~ s/-.*//g;
-         	while($lines =~ s/([A-Z]{4}\d{4})//i ) {
+         	while($lines =~ s/(\w4}\d{4})//i ) {
             	#print "$1\n";
             	push (@prereqs, $1);
             	system("$0 $1") if @ARGV == 2;
