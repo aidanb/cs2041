@@ -14,45 +14,33 @@ use strict;
 
 die "Usage: $!: word" if (!@ARGV or $ARGV[0] =~ /[^a-z]/i);
 
-my $check_word = $ARGV[0];
-my $poet;
+my $poet_name;
 my @words;
 my %poets;
-my %poet;
 
 foreach my $file (glob "poets/*.txt") {
     
     open F, $file or die "Error opening $file";
 
-    my $wc = 0;
-    $poet = $file;
-    $poet =~ s/poets\///;
-    $poet =~ s/_/ /g;
-    $poet =~ s/.txt//;
-    #print "$poet\n";    
+    $poet_name = $file;
+    $poet_name =~ s/poets\///;
+    $poet_name =~ s/_/ /g;
+    $poet_name =~ s/.txt//;
 
-    #read all the words into an array split on whitespace
-    while (my $lines = <F>) {
-        chomp($lines);
-        
-        push (@words, split(/\s+/, $lines));        # split includes empty strings, so wc is off slightly.
+
+    #read all the words into an array split on non-[a-z]
+    while (my $line = <F>) {
+        chomp($line);
+        $line =~ tr/.,:;!?"(){}//d;            #remove some common punctuation symbols 
+        push (@words, split(/\s+/, $line));        # split includes empty strings, so wc is off slightly.
     }  
    
     foreach my $word (@words) {
-        $poets{$poet}{$word}++;
+        $poets{$poet_name}{$word}++;
     }
 
-#    %poets = ("$poet" => "$word_count");
+    printf("%4d/%6d = %.9f %s\n", $poets{$poet_name}{$ARGV[0]}, $#words, $poets{$poet_name}{$ARGV[0]}/$#words, $poet_name);
 
+    @words = ();
     close F;
-}
-
-#    foreach my $x (keys %poets) {
-#        foreach my $y (keys %poet) {
-#            print "arval: $x -> $y -> $poets{$x}{$y}\n";        
-#        }                
-#    }
-
-foreach my $x (keys %poets) {
-    print "$poets{$x}{$check_word}/ num = num2 $x \n";
 }
