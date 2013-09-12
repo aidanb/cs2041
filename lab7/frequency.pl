@@ -27,19 +27,21 @@ foreach my $file (glob "poets/*.txt") {
     $poet_name =~ s/_/ /g;
     $poet_name =~ s/.txt//;
 
-
-    #read all the words into an array split on non-[a-z]
-    while (my $line = <F>) {
-        chomp($line);
-        $line =~ tr/.,:;!?"(){}//d;            #remove some common punctuation symbols 
-        push (@words, split(/\s+/, $line));        # split includes empty strings, so wc is off slightly.
-    }  
-   
-    foreach my $word (@words) {
-        $poets{$poet_name}{$word}++;
+    while (<F>){
+        tr/[A-Z]/[a-z]/;
+        @words = split /[^a-z]/;
+        foreach my $word (@words) {
+            $poets{$poet_name}{$word}++;
+            $poets{$poet_name}{"total_wc"}++ if length($word) > 0;
+        }
     }
+    
+    my $total_wc = $poets{$poet_name}{"total_wc"};
 
-    printf("%4d/%6d = %.9f %s\n", $poets{$poet_name}{$ARGV[0]}, $#words, $poets{$poet_name}{$ARGV[0]}/$#words, $poet_name);
+    printf("%4d/%6d = %.9f %s\n", $poets{$poet_name}{$ARGV[0]}, 
+                                    $total_wc, 
+                                    $poets{$poet_name}{$ARGV[0]}/$total_wc,
+                                    $poet_name);
 
     @words = ();
     close F;
