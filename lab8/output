@@ -1,0 +1,239 @@
+<title>Class Search by Teaching Period</title>
+<link rel="stylesheet" type="text/css" href="../layout/2014/myunsw.css">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   
+   <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#6CAADD">
+      <form name="googleForm" method="GET" action="http://www.google.com/u/theuniversityofnewsouthwales" target="_blank">
+         <tr>
+            <td colspan="4" height="35"><a href="http://www.unsw.edu.au" target="_blank"><img src="/images-timetable/unswtext.gif" width="432" height="8" hspace="5" vspace="5" border="0" alt="University of New South Wales"></a></td>
+         </tr>
+         <tr>
+            <td bgcolor="#FFFFFF" colspan="4"><IMG src="/images-portal/trans.gif" width="433" height="1"></td>
+         </tr>
+         <tr>
+            <td height="60" bgcolor="#6CAADD" align="center" valign="middle" width="110"><img src="../images-timetable/UNSWbanner_08.gif" width="88" height="36"></td>
+            <td height="60" width="1" rowspan="2" bgcolor="#FFFFFF"><IMG src="/images-portal/trans.gif" width="1" height="1"></td>
+            <td height="60" width="432" rowspan="2"><img src="/images-timetable/banner2014.jpg" width="521" height="60" alt="Class Details"></td>
+            <td height="60" align="right" bgcolor="#DDF0FF" valign="bottom">
+               <div id="hbHeaderBlock">
+                  <ul>
+                     <div class="headerLink">
+                        <li><a href="http://www.unsw.edu.au/gen/pad/contacts.html" target="_blank">Contacts</a></li>
+                        <li><a href="http://www.library.unsw.edu.au/" title="Visit the UNSW Library Homepage">Library</a></li>
+                        <li><a href="https://my.unsw.edu.au" title="Visit the myUNSW Homepage">myUNSW</a></li>
+                        <li><a href="http://www.elearning.unsw.edu.au/" title="Visit the UNSW e-Learning Homepage">e-Learning</a></li>
+                     </div>
+                  </ul>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td bgcolor="#FFFFFF" colspan="4" height="1"><IMG src="/images-portal/trans.gif" width="433" height="1"></td>
+         </tr>
+      </form>
+   </table>
+   <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+         <td>
+            <div id="ctOuter">
+               <div id="ctInner"></div>
+               <div id="ctHeading">Class search by Subject Area</div>
+            </div>
+         </td>
+      </tr>
+   </table><script type="text/javascript">
+
+     var _gaq = _gaq || [];
+     _gaq.push(['_setAccount', 'UA-32181153-1']);
+     _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script></head>
+
+<html lang="en">
+   <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+      <table width="100%" cellspacing="0">
+         <tr>
+            <td class="classSearchFormBody" colspan="3">
+               <table width="100%" cellspacing="0">
+                  <tr>
+                     <td class="rowSpacer"></td>
+                  </tr>
+                  <tr>
+                     <td class="formBody" colspan="3">
+                        <table width="100%" cellspacing="0">
+                           <tr>
+                              <td class="note">Data is correct as at Sun, 22-09-2013 01:37:31 EST</td>
+                              <td class="label" width="15%" rowspan="2">Go To</td>
+                              <td class="data" width="20%"><a href="subjectSearch.html">New search by Campus/Subject Area</a></td>
+                           </tr>
+                           <tr>
+                              <td class="note"> Data is currently published for 2014 and is subject to change.</td>
+                              <td class="data"><a href="sessionSearch.html">New search by Teaching Period</a></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="data"><br></td>
+                  </tr>
+                  <tr>
+                     <td class="formBody" colspan="3">
+                        <table width="100%" cellspacing="0">
+                           <tr>
+                              <td class="data" width="33%"><a href="#UGRD">Undergraduate Courses</a></td>
+                              <td class="data" width="33%"><a href="#PGRD">Postgraduate Courses</a></td>
+                              <td class="data"><a href="#RSCH">Research Courses</a></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="rowSpacer" colspan="3"></td><br></tr>
+                  <tr>
+                     
+                  </tr>
+                  <tr>
+                     <td colspan="2"><a name="UGRD"></a></td>
+                  </tr>
+                  <tr>
+                     <td class="classSearchMinorHeading" colspan="2"> Undergraduate </td>
+                     <td class="classSearchMinorHeading"></td>
+                  </tr>
+                  
+                  <tr>
+                     <td class="formBody" colspan="3">
+                        <table width="100%" cellspacing="0">
+                           <tr>
+                              <td class="label" width="15%">Campus </td>
+                              <td class="data">Sydney</td>
+                           </tr>
+                           <tr>
+                              <td class="rowSpacer"></td>
+                           </tr>
+                           <tr>
+                              <td class="label">Subject Area </td>
+                              <td class="data">Vision Science</td>
+                           </tr>
+                        </table><br><table width="100%" cellspacing="0">
+                           <tr>
+                              <td colspan="3" class="classSearchSectionHeading">Subject Area Listing</td>
+                           </tr>
+                           <tr>
+                              <td class="formBody" colspan="3">
+                                 <table width="100%" cellspacing="0">
+                                    <tr>
+                                       <td width="20%" class="tableHeading">Code </td>
+                                       <td width="50%" class="tableHeading">Course Title </td>
+                                       <td width="30%" class="tableHeading">Units of Credit </td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                    <tr class="rowLowlight">
+                                       <td class="data"><a href="VISN1101.html">VISN1101</a></td>
+                                       <td class="data"><a href="VISN1101.html">Seeing the World: Perspectives from Vision Science</a></td>
+                                       <td class="data">6</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                    <tr class="rowHighlight">
+                                       <td class="data"><a href="VISN1111.html">VISN1111</a></td>
+                                       <td class="data"><a href="VISN1111.html">Geometrical and Physical Optics</a></td>
+                                       <td class="data">6</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                    <tr class="rowLowlight">
+                                       <td class="data"><a href="VISN1221.html">VISN1221</a></td>
+                                       <td class="data"><a href="VISN1221.html">Visual Optics</a></td>
+                                       <td class="data">6</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                    <tr class="rowHighlight">
+                                       <td class="data"><a href="VISN2111.html">VISN2111</a></td>
+                                       <td class="data"><a href="VISN2111.html">Physiology of the Ocular System</a></td>
+                                       <td class="data">6</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                    <tr class="rowLowlight">
+                                       <td class="data"><a href="VISN2211.html">VISN2211</a></td>
+                                       <td class="data"><a href="VISN2211.html">Organisation and Function of the Visual System</a></td>
+                                       <td class="data">6</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                    <tr class="rowHighlight">
+                                       <td class="data"><a href="VISN2231.html">VISN2231</a></td>
+                                       <td class="data"><a href="VISN2231.html">Introduction to Ocular Disease</a></td>
+                                       <td class="data">6</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                    <tr class="rowLowlight">
+                                       <td class="data"><a href="VISN3111.html">VISN3111</a></td>
+                                       <td class="data"><a href="VISN3111.html">Development and Aging of the Visual System</a></td>
+                                       <td class="data">6</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                    <tr class="rowHighlight">
+                                       <td class="data"><a href="VISN3211.html">VISN3211</a></td>
+                                       <td class="data"><a href="VISN3211.html">New Developments in Vision Science</a></td>
+                                       <td class="data">6</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                    <tr class="rowLowlight">
+                                       <td class="data"><a href="VISN4003.html">VISN4003</a></td>
+                                       <td class="data"><a href="VISN4003.html">Vision Science Honours</a></td>
+                                       <td class="data">24</td>
+                                    </tr>
+                                    <tr>
+                                       <td class="rowSpacer" colspan="3"></td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="rowSpacer" colspan="3"></td>
+                           </tr>
+                           <tr>
+                              <td colspan="3" align="right" class="data"><a href="#top">Back to top</a></td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="rowSpacer" colspan="3"></td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="rowSpacer" colspan="3"></td>
+         </tr>
+      </table>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+         <tr>
+            <td align="center" class="footer">UNSW Sydney NSW 2052, Australia Telephone: (within Aust.) 02 9385 1000, (International) +61 2 9385 1000<br>CRICOS Provider Code 00098G Authorised by the Deputy Vice Chancellor (Academic) and Registrar<a href="http://www.unsw.edu.au/gen/pad/privacy.html" target="_blank">Privacy Statement</a>&nbsp;&nbsp;<a href="http://www.unsw.edu.au/gen/pad/copyright.html" target="_blank">Copyright Disclaimer</a></td>
+         </tr>
+      </table>
+   </body>
+</html>
