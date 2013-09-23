@@ -26,14 +26,24 @@ foreach (@ARGV) {
 	open F, "wget -q -O- $url|" or die "could not open website";
 
 	while (<F>) {
-		
-		#next if $_ !~ /[0-9]\/[0-9]/;
 
-		if ($_ =~ /"Semester"/i) {
-			print "Semester: $_";
-		}
+        chomp;
 
-		#print;
+           if ($_ =~ "Semester 1") {
+            print ("S1");
+        }
+        if ($_ =~ "Semester 2") {
+            print ("S2");
+        }
+
+        print "$course_code: ";
+
+		next if $_ !~ /<td class=\"data\">[MTWF][ouehr][nedui] [0-9]/;           # <td class="data">
+        s/<td class=\"data\">//;
+        s/<\/td>//;
+        s/\t//;
+        s/^\s*//;
+        print "$course_code: $_\n";
 	}
 
 }
