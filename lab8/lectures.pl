@@ -11,8 +11,12 @@ my $base_url = "http://www.timetable.unsw.edu.au/2013/";
 die "Usage: $0 Four-character UNSW course code"
 	if ((!@ARGV) or ($ARGV[0] !~ /^[a-z]{4}[0-9]{4}$/i));
 
+	print "Checking for lectures...";
+
 foreach (@ARGV) {
 	
+	my @lectures;
+
 	my $course_code = $_;
 	$course_code =~ tr/[a-z]/[A-Z]/;
 
@@ -20,20 +24,33 @@ foreach (@ARGV) {
 	$url .= $course_code;
 	$url .= ".html";
 
-	print "Checking for lectures for $course_code...\n";
-	print "Scanning $url\n";
-
 	open F, "wget -q -O- $url|" or die "could not open website";
+
+
+	my $lecture_next_line = 0;
+	my $sem = "";
+
 
 	while (<F>) {
 		
-		#next if $_ !~ /[0-9]\/[0-9]/;
+		$lecture_next_line--;
 
-		if ($_ =~ /"Semester"/i) {
-			print "Semester: $_";
+		if ($_ =~ /a href=\"#(S.)-.*\">/ && $1 ne $sem) {
+			$sem = $1;
+			push(@lectures, "\n$course_code: $sem ");
 		}
 
-		#print;
+		if ($_ =~ /<a href=\"#$sem.*Lecture/) {		#  <a href="#S1-2417">Lecture</a>
+			$lecture_next_line = 6;
+		}
+
+		if ($lecture_next_line eq 0 &&
+			$_ =~ /\"data\">([MTWF][ouehr][nedui] [0-9].*)</) {
+			push(@lectures, "$1 ");
+		}
+
 	}
+	print @lectures;
+	print "\n";
 
 }
