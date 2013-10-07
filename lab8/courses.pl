@@ -19,7 +19,6 @@ $url .= $course_code;
 $url .= "KENS.html";
 
 print "Checking for UNSW course codes with prefix $course_code...\n";
-print "Scanning $url\n";
 
 open F, "wget -q -O- $url|" or die "could not open website";
 
