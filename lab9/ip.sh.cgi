@@ -4,8 +4,11 @@
 
 #set -x
 
-echo '
 
+cat <<eof
+Content-type: text/html
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -18,10 +21,35 @@ td{border: solid 1px;padding: 0px 10px;}
 </head
 <body>
 <table id="info_table" >
-<tr><td>Browser IP Address<td>129.94.242.38
-<tr><td>Browser Hostname<td>piano14.orchestra.cse.unsw.EDU.AU
-<tr><td>Browser<td>Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/537.17
+<tr><td>Browser IP Address<td>
+
+<pre>
+eof
+
+echo `hostname -i`
+
+cat <<eof
+</pre>
+
+<tr><td>Browser Hostname<td>
+<pre>
+eof
+echo `host $(hostname -i) | cut -d' ' -f2-3`
+cat<<eof
+<pre>
+
+<tr><td>Browser<td>
+
+<pre>
+eof
+echo `env | cut -d'=' -f4-6`
+cat <<eof
+</pre>
+
 </table>
+
 </body>
 </html>
-'
+eof
+
+
