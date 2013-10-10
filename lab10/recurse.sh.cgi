@@ -5,6 +5,16 @@
 #set -x
 
 
+
+if [ -z `echo $QUERY_STRING` ]
+then 
+    y=0
+else 
+    y=`expr $QUERY_STRING + 1`
+fi
+
+
+
 cat <<eof
 Content-type: text/html
 
@@ -20,11 +30,11 @@ Content-type: text/html
 eof
 
 x=`env | grep REDIRECT_SCRIPT_URL | cut -d'=' -f2`
-echo 
+
 cat<<eof
 <pre>
 
-<a href="http://cgi.cse.unsw.edu.au$x">Run me again<a/>
+<a href="http://cgi.cse.unsw.edu.au$x?$y">Run me again<a/>
 
 
 </body>
