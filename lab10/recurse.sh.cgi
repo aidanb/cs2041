@@ -4,6 +4,7 @@
 
 #set -x
 
+
 cat <<eof
 Content-type: text/html
 
@@ -17,18 +18,13 @@ Content-type: text/html
 
 <pre>
 eof
+
 x=`env | grep REDIRECT_SCRIPT_URL | cut -d'=' -f2`
 echo 
 cat<<eof
 <pre>
 
-<a href="
-
-http://cgi.cse.unsw.edu.au$x
-
-
-
-">Run me again<a/>
+<a href="http://cgi.cse.unsw.edu.au$x">Run me again<a/>
 
 
 </body>
