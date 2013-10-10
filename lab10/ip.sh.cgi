@@ -42,7 +42,9 @@ cat<<eof
 
 <pre>
 eof
-echo `env | cut -d'=' -f4-6`
+
+echo `env | grep HTTP_USER_AGENT | cut -d'=' -f2`
+
 cat <<eof
 </pre>
 

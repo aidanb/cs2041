@@ -10,6 +10,9 @@ for url in sys.argv[1:len(sys.argv)]:
 		freq = 1;	
 	else:
 		html = {}
+        
+        # subprocess.Popen takes a list of arguments:
+        # and store the output in a variable
 		p = subprocess.Popen(["wget","-q","-O-",url], stdout=subprocess.PIPE)
 		file = ''.join(p.stdout.readlines())
       
