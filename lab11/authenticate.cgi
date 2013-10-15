@@ -10,7 +10,7 @@ warningsToBrowser(1);
 if (!param("username")) {
     getUsername();
 } elsif (param("username")){
-    #$username = param("username");
+    $username = param("username");
     getPassword();
 }
 
@@ -24,7 +24,6 @@ if (param("password")) {
 print end_html;
 
 sub getUsername {
-
 print <<eof;
 <form method="post" action="$ENV{SCRIPT_URI}">
 Enter username: <input type="text" name="username">
@@ -34,7 +33,6 @@ eof
 }
 
 sub getPassword {
-
 print <<eof;
 <form method="post" action="$ENV{SCRIPT_URI}">
 Enter password: <input type="text" name="password">
@@ -45,8 +43,21 @@ eof
 }
 
 sub authenticate($) {
-
+if (validPassword()) {
 print <<eof;
-"You entered $username :: $password""
+You are authenticated.
 eof
+} else {
+print <<eof;
+Incorrect username or password for $username :: $password ($pwd).
+eof
+}
+}
+
+sub validPassword {
+    open (F, "users/$username.password") or die;
+    chomp;    
+    $pwd = <F>;
+    close F;
+    return ("$pwd" eq "$password");
 }
